@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get-started</title>
+
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/get-started/get-started.css" />
+</head>
+
+<body>
+    <form action="/upload" method="POST" enctype="multipart/form-data" name="upload-form">
+        <p id="form-header">Just fill out this form, pay, and you'll be on your way to a much-improved essay!</p>
+        <h1>Contact info</h1>
+        <div class="name">
+            <div class="input first-name">
+                <label for="first-name">First name <span style="color:#f76565;">*</span></label>
+                <input type="text" name="firstName" id="first-name" placeholder="John" required>
+            </div>
+            <div class="input last-name">
+                <label for="last-name">Last name <span style="color:#f76565;">*</span></label>
+                <input type="text" name="lastName" id="last-name" placeholder="Smith" required>
+            </div>
+        </div>
+        <div class="input email">
+            <label for="email">Email <span style="color:#f76565;">*</span></label>
+            <input type="email" name="email" id="email" placeholder="john.smith@email.com" required>
+        </div>
+        <h1>Document Submission</h1>
+        <div class="input submission-method">
+            <div class="submission-option">
+                <input type="radio" id="link-option" name="submissionMethod" checked="checked" value="Google Doc Link">
+                <label for="link-option">Google Doc shareable link</label>
+            </div>
+            <h2>OR</h2>
+            <div class="submission-option">
+                <input type="radio" id="file-option" name="submissionMethod" value="File Upload">
+                <label for="file-option">Upload a local file</label>
+            </div>
+        </div>
+
+        <div class="input doc-link">
+            <input type="text" name="googleDocLink" id="linkValue" placeholder="Google Doc link">
+        </div>
+        <div class="input file-upload">
+            <input type="file" name="file" id="file" id="fileValue" class="inputfile" />
+            <label for="file" id="file-label">Choose a file</label>
+        </div>
+        <div class="input time-option">
+            <h2>Essay turnaround time</h2>
+            <div class="checkbox-option-container">
+                <div class="checkbox-option">
+                    <input type="radio" id="slow" name="option" checked="checked" value="5 days">
+                    <label for="slow">5 days</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="radio" id="medium" name="option" value="24 hours">
+                    <label for="medium">24 hours</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="radio" id="fast" name="option" value="3 hours">
+                    <label for="fast">3 hours</label>
+                </div>
+            </div>
+        </div>
+        <div class="input word-count">
+            <h2>Word count</h2>
+            <div class="slider-container">
+                <input id="cost-slider" name="wordSlider" type="range" min="1" max="100" value="10"
+                    style="outline: none;">
+                <p id="selector-value">1,000 words</p>
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+        <div class="price-breakdown-container">
+            <div class="div1">
+                <h2>Baseline &emsp;&ensp;</h2>
+                <p>1,000 words</p>
+            </div>
+            <div class="div2" id="baseline">$25.00</div>
+            <div class="div3">
+                <h2>Additional &emsp;&ensp;</h2>
+                <p>$1.00 x 100 words</p>
+            </div>
+            <div class="div4" id="additional">$0.00</div>
+            <div class="div5">
+                <h2>Total</h2>
+            </div>
+            <div class="div6" id="cost">$25.00</div>
+        </div>
+        <div class="input extra-notes">
+            <label for="extra-notes">Additional notes:</label>
+            <textarea id="extra-notes" name="extraNotes" rows="10"
+                placeholder="Anything else you want us to know?"></textarea>
+        </div>
+        <input id="wordCount" type="text" name="wordCount" value="1,000 words">
+        <input id="baselineCost" type="text" name="baselineCost" value="$25.00">
+        <input id="extraCost" type="text" name="extraCost" value="$0.00">
+        <input id="finalCost" type="text" name=finalCost value="$25.00">
+        <button type="submit" id="submit-btn">Upload! (and pay)</button>
+    </form>
+
+
+
+
+    <script src="/get-started/get-started.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sarah</title>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- typing -->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
+
+    <!-- count up -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.7.1/countUp.min.js"></script>
+
+    <!-- flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media="screen">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity-fade@1/flickity-fade.css">
+    <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/index/index.css" />
+</head>
+
+<body>
+
+    <div class="nav-container">
+        <div class="nav-2">
+            <a href="#" class="process-nav">Essay Editing</a>
+            <a href="#" class="about-us-nav">About Us</a>
+            <a href="#" class="testimonials-nav">Testimonials</a>
+            <a href="#" class="pricing-nav">Pricing</a>
+        </div>
+        <div class="nav-3"><a href="/get-started" target="_blank">Get started &nbsp;<i
+                    class="material-icons">arrow_forward</i></a></div>
+        <i class="material-icons" id="open-nav">menu</i>
+    </div>
+    <div class="nav-overlay">
+        <div class="nav-overlay-top">
+            <i class="material-icons" id="close-nav">close</i>
+        </div>
+        <a href="#" class="process-nav">Essay Editing</a>
+        <a href="#" class="about-us-nav">About Us</a>
+        <a href="#" class="testimonials-nav">Testimonials</a>
+        <a href="#" class="pricing-nav">Pricing</a>
+        <a href="/get-started" target="_blank"
+            style="text-transform: uppercase; margin-top: 50px; font-size: 1.5rem; color: #a5fc8d;">Get started</a>
+    </div>
+
+    <div class="home-container">
+        <div class="home-content fade-right">
+            <h2>Sarah's Edits</h2>
+            <h1>Essay editing that's</h1>
+            <h1 id="type-animation"></h1>
+            <p>Have an essay you want professionaly edited? Send it over to us and we'll help you take it to the next
+                level.</p>
+            <a class="get-started-btn" href="/get-started" target="_blank">Get started&ensp;<i
+                    class="material-icons">arrow_forward</i></a>
+        </div>
+        <img src="/index/images/home2.jpg" class="fade-left">
+    </div>
+
+    <div class="process-container" id="process-container">
+        <div class="heading">
+            <h1 class="fade-up">Our process</h1>
+            <p class="fade-up">A simple 3-step process. Getting your essay edited
+                shouldn't be complicated.</p>
+        </div>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-item active-timeline">
+                <div class="timeline-item-number">
+                    <p>1</p>
+                </div>
+                <div class="timeline-item-content">
+                    <img src="/index/images/send.png" class="fade-up">
+                    <h1 class="fade-up">Send</h1>
+                    <p class="fade-up">Just send us your essay, and we'll get in touch with you to work out the details.
+                        Our
+                        submission process is flexible.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-number">
+                    <p>2</p>
+                </div>
+                <div class="timeline-item-content">
+                    <img src="/index/images/edit.png" class="fade-up">
+                    <h1 class="fade-up">Edit</h1>
+                    <p class="fade-up">Sit back and relax! We'll edit your essay according to your customizable
+                        criteria, and within the
+                        timeframe you ask for.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-number">
+                    <p>3</p>
+                </div>
+                <div class="timeline-item-content">
+                    <img src="/index/images/revise.png" class="fade-up">
+                    <h1 class="fade-up">Revise</h1>
+                    <p class="fade-up">We'll send you back your essay. Time for you to make the changes, on your way to
+                        a much-improved
+                        essay!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="separator" style="width: 100%; height: 20vh; background: white;"></div> -->
+
+    <div class="about-us-container" id="about-us-container">
+        <div class="heading">
+            <div class="heading-1">
+                <h2>About us</h2>
+                <h1>Meet the team</h1>
+            </div>
+            <div class="heading-2">
+                <p>We're a team of bright students who know what makes a great essay. Professional writers who want to
+                    help
+                    you become one as well. Your success is our number one priority. Our promise to you? 100%
+                    satisfaction guaranteed</p>
+            </div>
+        </div>
+        <div class="team-cards-container">
+            <div class="team-card active-card">
+                <div class="front front-sarah">
+                    <div class="front-1">
+                        <div class="front-1-profile-picture"></div>
+                    </div>
+                    <div class="front-2 fade-up">
+                        <h1>Sarah LM</h1>
+                        <p>CEO / Chief Editor</p>
+                        <button><i class="material-icons" onclick="sarahBack()">info_outline</i></button>
+                    </div>
+                </div>
+                <div class="back back-sarah">
+                    <div class="back-content">
+                        <p>Sarah is a talented writer. She will be studying neuroscience at Carleton University.</p>
+                        <button><i class="material-icons" onclick="sarahFront()">info_outline</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="front front-willis">
+                    <div class="front-1">
+                        <div class="front-1-profile-picture">
+                            <img src="/index/images/Willis.jpg">
+                        </div>
+                    </div>
+                    <div class="front-2 fade-up">
+                        <h1>Willis Guo</h1>
+                        <p>CTO</p>
+                        <button><i class="material-icons" onclick="willisBack()">info_outline</i></button>
+                    </div>
+                </div>
+                <div class="back back-willis">
+                    <div class="back-content">
+                        <p>Willis will be studying coomputing at Imperial College London.</p>
+                        <button><i class="material-icons" onclick="willisFront()">info_outline</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="separator" style="width: 100%; height: 20vh; background: white;"></div> -->
+
+    <div class="stats-container">
+        <div class="stat fade-up">
+            <!-- <img src="counter3.png"> -->
+            <p>We've helped</p>
+            <h1 class="counter" id="counter3">0</h1>
+            <p>students</p>
+        </div>
+        <div class="stat fade-up">
+            <!-- <img src="counter2.png"> -->
+            <p>We've edited</p>
+            <h1 class="counter" id="counter2">0</h1>
+            <p>words</p>
+        </div>
+        <div class="stat fade-up">
+            <!-- <img src="counter1.png"> -->
+            <p>We've revised</p>
+            <h1 class="counter" id="counter1">0</h1>
+            <p>documents</p>
+        </div>
+
+    </div>
+    <!-- 
+    <div style="width: 100%; height: 10vh; background: white;"></div> -->
+
+    <div class="testimonials-container" id="testimonials-container">
+        <div class="heading">
+            <h2 class="fade-up">Testimonials</h2>
+            <h1 class="fade-up">What our happy customers have to say about us:</h1>
+            <p class="fade-up">Don't just take our word for it. Our clients say it best, and they love the work we do,
+                which is why they
+                always come back to us! Our promise to
+                you: 100% satisfaction guaranteed.</p>
+        </div>
+        <div class="flickity-background">
+            <div class="flickity-container">
+                <div class="main-carousel fade-up">
+                    <div class="carousel-cell">
+                        <p>Absolutely love the quality of service! Everyone involved is professional, efficient and
+                            proficient- would most
+                            definitely recommend.</p>
+                        <h1>Shelina Lalji</h1>
+                        <h2>POINTTS Traffic Tickets</h2>
+                    </div>
+
+                    <div class="carousel-cell">
+                        <p>No regrets! Being able to score a 7 on my written tasks for English class thanks to Sarah's
+                            help
+                            was
+                            amazing! She was able
+                            to give in depth critics and actually put time into helping me. With how cheap it is, I
+                            didn’t
+                            expect much at first but
+                            I was pleasantly surprised! English isn’t really my forte, especially since it’s not my
+                            first
+                            language, but Sarah really
+                            managed to make my writing sound the best it ever did! Thank you so much!</p>
+                        <div class="carousel-cell-footer">
+                            <h1>Shannon E</h1>
+                            <h2>IB Student</h2>
+                        </div>
+                    </div>
+
+                    <div class="carousel-cell">
+                        <p>Sarah is an incredible editor. She is a reliable editor and has edited several of my papers
+                            and
+                            essays in a timely
+                            fashion. These edits included detailed feedback to improve writing and organize thoughts.
+                            She is
+                            overall very helpful
+                            and can aid students of all levels of writing.</p>
+                        <div class="carousel-cell-footer">
+                            <h1>Nazra R</h1>
+                            <h2>TOPS Student</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flickity-status">
+                <button class="flkty-prev"><i class="material-icons">arrow_back</i></button>
+                <p class="flkty-status">01 </p>
+                <p class="flkty-length"></p>
+                <button class="flkty-next"><i class="material-icons">arrow_forward</i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div style="width: 100%; height: 10vh; background: white;"></div> -->
+    <div class="pricing-container" id="pricing-container">
+        <div class="pricing-container-1">
+            <div class="heading fade-up">
+                <h2>Pricing</h2>
+                <h1>Affordable, accessible, amazing!</h1>
+            </div>
+            <div class="time-option-container fade-up">
+                <h2>I want my essay edited and returned in:</h2>
+                <div class="checkbox-option-container">
+                    <div class="checkbox-option">
+                        <input type="radio" id="slow" name="option" checked="checked">
+                        <label for="slow">5 days</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="radio" id="medium" name="option">
+                        <label for="medium">24 hours</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="radio" id="fast" name="option">
+                        <label for="fast">3 hours</label>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-container fade-up">
+                <input id="cost-slider" type="range" min="1" max="100" value="10" style="outline: none;">
+                <p id="selector-value">1,000 words</p>
+                <div id="progress-bar"></div>
+            </div>
+            <div class="price-breakdown-container fade-up">
+                <div class="div1">
+                    <h2>Baseline &emsp;&ensp;</h2>
+                    <p>1,000 words</p>
+                </div>
+                <div class="div2" id="baseline">$25.00</div>
+                <div class="div3">
+                    <h2>Additional &emsp;&ensp;</h2>
+                    <p>$1.00 x 100 words</p>
+                </div>
+                <div class="div4" id="additional">$0.00</div>
+                <div class="div5">
+                    <h2>Total</h2>
+                </div>
+                <div class="div6" id="cost">$25.00</div>
+            </div>
+        </div>
+        <div class="pricing-container-2">
+            <h2 class="fade-up">Also included:</h2>
+            <ul class="fade-up">
+                <li><i class="material-icons" id="check">check_circle</i>&emsp;Personalized feedback</li>
+                <li><i class="material-icons" id="check">check_circle</i>&emsp;Live chat with editor</li>
+                <li><i class="material-icons" id="check">check_circle</i>&emsp;Second round editing</li>
+                <li><i class="material-icons" id="check">check_circle</i>&emsp;Subject-specific edits</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div class="get-started-container">
+        <img src="/index/images/get-started.jpg" class="fade-up">
+        <h1 class="fade-up">Want the gift of an amazing essay?</h1>
+        <a class="get-started-btn fade-up" href="/get-started" target="_blank">Get started&ensp;<i
+                class="material-icons">arrow_forward</i></a>
+    </div>
+
+
+
+    <script src="/index/index.js"></script>
+</body>
+
+</html>

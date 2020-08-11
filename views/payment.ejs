@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/payment/payment.css">
+</head>
+
+<body>
+
+    <h1 id="header">Hi <%= name %>. Thank you for uploading your work! <br> Here's a summary of your order: </h1>
+
+    <!-- <h2><%= email %> </h2>
+    <h2><%= submissionMethod %> </h2>
+    <h2><%= fileName %> </h2>
+    <h2>Link: <%= googleDocLink %> </h2>
+    <h2><%= wordCount %> </h2>
+    <h2><%= baselineCost %> </h2>
+    <h2><%= extraCost %> </h2>
+    <h2><%= finalCost %> </h2>
+    <h2>extra notes: <%= extraNotes %> </h2> -->
+
+    <div class="email-summary">
+        <h1>Deliver to: </h1>
+        <h2><%= email %></h2>
+    </div>
+    <div class="document-summary">
+        <h1>Document summary</h1>
+        <div class="document">
+            <h1>Edit: </h1>
+            <h2><%= fileName %> </h2>
+            <h2><%= googleDocLink %> </h2>
+        </div>
+        <div class="word-count">
+            <h1>Word count: </h1>
+            <h2><%= wordCount %></h2>
+        </div>
+    </div>
+    <div class="price-summary">
+        <h1>Price breakdown</h1>
+        <div class="price-breakdown-container">
+            <div class="div1">
+                <h2>Baseline &emsp;&ensp;</h2>
+                <p>1,000 words</p>
+            </div>
+            <div class="div2" id="baseline"><%= baselineCost %></div>
+            <div class="div3">
+                <h2>Additional &emsp;&ensp;</h2>
+                <p>$1.00 x 100 words</p>
+            </div>
+            <div class="div4" id="additional"><%= extraCost %></div>
+            <div class="div5">
+                <h2>Total</h2>
+            </div>
+            <div class="div6" id="cost"><%= finalCost %></div>
+        </div>
+    </div>
+    <div class="extra-notes">
+        <h1>Additional notes</h1>
+        <h2><%= extraNotes %> </h2>
+        <% if (extraNotes.length == 0) { %>
+        <h2 style="font-style: italic;">No additional notes</h2>
+        <% } %>
+    </div>
+
+    <div id="paypal-button-container"></div>
+
+
+    <script src="/payment/payment.js"></script>
+
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=Ae4hARmRXf2xmWhW4kO-x8uew1Q5qpYVMwfs1oXVA0B8-LbjEJR468JUkBqgIky26FTy47ANsvfCu0h4&currency=CAD"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+        </script>
+    <script>
+        let price = parseFloat(cost.innerHTML.substring(1));
+        //console.log(price)
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                // This function sets up the details of the transaction, including the amount and line item details.
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: price
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data, actions) {
+                window.location.href = "../index.html";
+                // This function captures the funds from the transaction.
+                return actions.order.capture().then(function (details) {
+                    // This function shows a transaction success message to your buyer.
+                    // alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+            },
+            style: {
+                size: "responsive",
+
+            }
+        }).render('#paypal-button-container');
+              //This function displays Smart Payment Buttons on your web page.
+    </script>
+</body>
+
+</html>

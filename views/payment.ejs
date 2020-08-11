@@ -96,7 +96,7 @@
                 });
             },
             onApprove: function (data, actions) {
-                window.location.href = "../index.html";
+                window.location.href = "index.ejs";
                 // This function captures the funds from the transaction.
                 return actions.order.capture().then(function (details) {
                     // This function shows a transaction success message to your buyer.

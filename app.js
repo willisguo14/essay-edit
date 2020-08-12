@@ -125,7 +125,7 @@ app.post("/upload", (req, res) => {
   });
 });
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, (req, res) => {
   console.log(`Server started on port ${port}`);
 });

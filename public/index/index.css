@@ -145,7 +145,7 @@
 @media only screen and (min-width: 1366px) {
   .home-container {
     margin: 0 90px;
-    width: calc(100% - 160px);
+    width: calc(100% - 180px);
   }
 }
 
@@ -365,7 +365,7 @@
 @media only screen and (min-width: 1366px) {
   .get-started-container {
     margin: 150px 90px;
-    width: calc(100% - 160px);
+    width: calc(100% - 180px);
   }
 }
 
@@ -548,7 +548,7 @@
 @media only screen and (min-width: 1366px) {
   .testimonials-container {
     margin: 20px 90px;
-    width: calc(100% - 160px);
+    width: calc(100% - 180px);
 
     display: flex;
     flex-direction: row;
@@ -1216,4 +1216,87 @@ i {
   .nav-3 {
     right: 95px;
   }
+}
+
+.faq-container {
+  margin: 0 20px;
+  margin-top: 150px;
+  width: calc(100% - 40px);
+}
+@media only screen and (min-width: 1366px) {
+  .faq-container {
+    margin: 0 90px;
+    margin-top: 150px;
+    width: calc(100% - 180px);
+  }
+}
+#faq-small-header,
+#faq-big-header {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: var(--heading);
+  color: var(--writing);
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+@media only screen and (max-width: 1023px) {
+  #faq-big-header {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #faq-small-header {
+    display: none;
+  }
+}
+.question {
+  width: 100%;
+  padding: 20px 0;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: var(--writing);
+  font-size: 1.5rem;
+
+  cursor: pointer;
+}
+
+.question i {
+  margin-top: 5.5px;
+  margin-right: 10px;
+
+  transition: 0.2s;
+  transform: rotate(0deg);
+}
+.is-open i {
+  transform: rotate(90deg);
+}
+
+.answer {
+  max-height: 0px;
+  overflow: hidden;
+
+  transition: 0.2s;
+}
+.answer p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: var(--writing);
+  font-size: var(--paragraph);
+  line-height: 2rem;
+
+  margin: 20px 0;
+  margin-left: 34px;
 }

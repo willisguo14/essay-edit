@@ -40,6 +40,10 @@ $(document).ready(function () {
     scrollTo("pricing-container");
     closeNav();
   });
+  $(".faq-nav").click(function () {
+    scrollTo("faq-container");
+    closeNav();
+  });
 });
 $(document).on("scroll", function () {
   let windowTop = $(document).scrollTop() + navHeight + 2;
@@ -47,8 +51,15 @@ $(document).on("scroll", function () {
   let aboutTop = $(".about-us-container").offset().top;
   let testimonialTop = $(".testimonials-container").offset().top;
   let pricingTop = $(".pricing-container").offset().top;
+  let faqTop = $(".faq-container").offset().top;
 
-  if (pricingTop <= windowTop) {
+  if (faqTop <= windowTop) {
+    $(".faq-nav")
+      .addClass("active-nav")
+      .siblings()
+      .removeClass("active-nav");
+  }
+  else if (pricingTop <= windowTop) {
     $(".pricing-nav")
       .addClass("active-nav")
       .siblings()
